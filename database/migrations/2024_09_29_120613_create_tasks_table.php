@@ -12,7 +12,9 @@ return new class extends Migration {
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table;
+            $table->string('title'); // Add title field
+            $table->text('description'); // Add description field
+            $table->enum('status', ['pending', 'completed', 'in_progress']); // Add status field with predefined options
             $table->timestamps();
         });
     }
